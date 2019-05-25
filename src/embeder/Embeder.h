@@ -2,7 +2,15 @@
 #define INPICTURE_EMBEDER_H
 
 
+#include <memory>
+
+#include "../image/Image.h"
+
 class Embeder {
+public:
+  using Byte = unsigned char;
+
+  virtual void embed(std::shared_ptr<Image> image, const std::vector<Byte> &data) = 0;
 
 };
 
