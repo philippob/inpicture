@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <jpeglib.h>
+
 #include "JPEGImage.h"
 
 JPEGImage::JPEGImage(Image::Unit width, Image::Unit height) {
@@ -5,11 +9,11 @@ JPEGImage::JPEGImage(Image::Unit width, Image::Unit height) {
 }
 
 void JPEGImage::load(const std::string &path) {
-
+  //TODO: implementation
 }
 
 void JPEGImage::save(const std::string &path) {
-
+  //TODO: implementation
 }
 
 Image::Unit JPEGImage::getWidth() {

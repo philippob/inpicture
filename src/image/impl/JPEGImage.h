@@ -3,6 +3,9 @@
 
 
 #include "../Image.h"
+#include "../exceptions/FileReadException.h"
+#include "../exceptions/FileWriteException.h"
+#include "../exceptions/InvalidFileException.h"
 
 class JPEGImage : public Image {
 public:
