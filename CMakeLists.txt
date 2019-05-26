@@ -3,8 +3,9 @@ project(inpicture)
 
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(Boost 1.65.1 REQUIRED program_options)
 find_package(PNG 1.6.34 REQUIRED png)
 find_package(JPEG 80 REQUIRED jpeg)
 
-add_executable(inpicture src/main.cpp src/image/Image.h src/embeder/Embeder.h src/image/impl/PNGImage.cpp src/image/impl/PNGImage.h src/image/exceptions/InputOutputException.h src/image/exceptions/FileReadException.h src/image/exceptions/FileWriteException.h src/image/exceptions/InvalidFileException.h src/image/impl/JPEGImage.cpp src/image/impl/JPEGImage.h)
-target_link_libraries(inpicture PNG::PNG JPEG::JPEG)
+add_executable(inpicture src/main.cpp src/inpicture/InPicture.cpp src/inpicture/InPicture.h src/inpicture/picture/Picture.cpp src/inpicture/picture/Picture.h src/inpicture/picture/io/PictureLoader.h src/inpicture/picture/io/PictureSaver.h)
+target_link_libraries(inpicture PNG::PNG JPEG::JPEG Boost::program_options)
