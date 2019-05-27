@@ -152,4 +152,3 @@ Picture::Pointer PNGPictureWriterReader::read(std::string file) {
 bool PNGPictureWriterReader::isFileTypeSupported(std::string extension) const {
   return extension == "png";
 }
-
