@@ -12,13 +12,13 @@ int InPicture::run(int argc, char **argv) noexcept {
     po::options_description optionsDescription{"Allowed options"};
 
     try {
-      auto conflictingOptions = [&variablesMap] (std::string first, std::string second) {
+      auto conflictingOptions = [&variablesMap](std::string first, std::string second) {
         if (variablesMap.count(first) && !variablesMap[first].defaulted() &&
-          variablesMap.count(second) && !variablesMap[second].defaulted())
+            variablesMap.count(second) && !variablesMap[second].defaulted())
           throw std::logic_error{"conflicting options - '--" + first + "' and '--" + second + "'"};
       };
 
-      auto dependingOption = [&variablesMap] (std::string dependent, std::string dependency) {
+      auto dependingOption = [&variablesMap](std::string dependent, std::string dependency) {
         if (variablesMap.count(dependent) && !variablesMap[dependent].defaulted())
           if (variablesMap.count(dependency) == 0 || variablesMap[dependency].defaulted())
             throw std::logic_error{"option '--" + dependent + "' requires option '--" + dependency + "' to be set"};
@@ -56,7 +56,6 @@ int InPicture::run(int argc, char **argv) noexcept {
 
     if (variablesMap.count("version"))
       std::cout << "InPicture version 1.0. Philipp Baszuk 2019. MIT License. " << std::endl;
-
 
 
   } catch (const std::exception &exception) {

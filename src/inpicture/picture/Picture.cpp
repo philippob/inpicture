@@ -4,6 +4,18 @@ Picture::Picture(Picture::Unit width, Picture::Unit height) {
   initialize(width, height);
 }
 
+Picture::Unit Picture::getWidth() const {
+  return width;
+}
+
+Picture::Unit Picture::getHeight() const {
+  return height;
+}
+
+Picture::Unit Picture::getSize() const {
+  return width * height;
+}
+
 void Picture::initialize(Picture::Unit width, Picture::Unit height) {
   this->width = width;
   this->height = height;

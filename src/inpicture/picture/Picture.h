@@ -35,6 +35,12 @@ public:
 
   Picture(Unit width, Unit height);
 
+  Unit getWidth() const;
+
+  Unit getHeight() const;
+
+  Unit getSize() const;
+
   virtual void initialize(Unit width, Unit height);
 
   virtual void resize(Unit newWidth, Unit newHeight);
