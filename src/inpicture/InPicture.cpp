@@ -41,7 +41,7 @@ int InPicture::run(int argc, char **argv) noexcept {
       conflictingOptions("decombine", "method");
 
       dependingOption("combine", "image");
-      dependingOption("combine", "data");
+      dependingOption("combine", "secret");
       dependingOption("combine", "method");
 
       dependingOption("decombine", "image");
